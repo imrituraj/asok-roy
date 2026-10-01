@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react'
 import Intro from './components/Intro'
 import Kiln from './components/Kiln'
 import Moments from './components/Moments'
-import { copy, contact, credit } from './data'
+import { copy, contact, creditBy } from './data'
 import { useReveal } from './useReveal'
 
 const year = new Date().getFullYear()
@@ -44,13 +44,27 @@ function Nav({ t, onToggle }) {
   )
 }
 
+// The hero name: first word in brick, the rest in kiln-fire italic, underlined by a brush stroke.
+function NameArt({ name }) {
+  const [first, ...rest] = name.split(' ')
+  return (
+    <h1 className="name-art" aria-label={name}>
+      <span className="name-brick" aria-hidden="true">{first}</span>{' '}
+      <span className="name-fire" aria-hidden="true">{rest.join(' ')}</span>
+      <svg className="name-swoosh" viewBox="0 0 400 30" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M4 22C70 8 150 6 220 12s120 8 176-6" />
+      </svg>
+    </h1>
+  )
+}
+
 function Hero({ t }) {
   return (
     <header className="hero" id="top">
       <div className="wrap hero-grid">
         <div className="hero-copy">
           <p className="eyebrow">{t.hero.eyebrow}</p>
-          <h1>{t.hero.name}</h1>
+          <NameArt name={t.hero.name} />
           <p className="tagline">{t.hero.tagline}</p>
           <p className="hero-sub">{t.hero.sub}</p>
           <div className="hero-ctas">
@@ -245,7 +259,9 @@ function Contact({ t }) {
       </div>
       <footer className="footer wrap">
         <span>© {year} {t.hero.name} · {t.footer}</span>
-        <span className="credit">{credit}</span>
+        <span className="credit">
+          Made with <span className="heart" role="img" aria-label="love">♥</span> by <strong>{creditBy}</strong>
+        </span>
       </footer>
     </section>
   )

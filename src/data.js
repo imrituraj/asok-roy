@@ -10,7 +10,8 @@ export const contact = {
   mapsUrl: 'https://maps.app.goo.gl/GhWHLCHrE7n1aucB9',
 }
 
-export const credit = 'Designed with respect by Ritu Raj'
+// Footer credit: shown as "Made with ♥ by RR"
+export const creditBy = 'RR'
 
 // Photo gallery. To add a photo: put the file in public/photos/ and add one line here.
 // The first photo is shown large. Captions are optional; shape is detected automatically.
