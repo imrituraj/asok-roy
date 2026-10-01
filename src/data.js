@@ -29,7 +29,7 @@ export const photos = [
 export const copy = {
   en: {
     langLabel: 'বাংলা',
-    nav: { about: 'About', moments: 'Moments', bricks: 'Brick field', works: 'Contracts', home: 'Sonamura', contact: 'Contact' },
+    nav: { brandSub: 'Bricks · Contracts', about: 'About', moments: 'Moments', bricks: 'Brick field', works: 'Contracts', home: 'Sonamura', contact: 'Contact' },
     hero: {
       eyebrow: 'Sonamura · Tripura',
       name: 'Asok Roy',
@@ -123,7 +123,7 @@ export const copy = {
 
   bn: {
     langLabel: 'English',
-    nav: { about: 'পরিচয়', moments: 'মুহূর্ত', bricks: 'ইটভাটা', works: 'ঠিকাদারি', home: 'সোনামুড়া', contact: 'যোগাযোগ' },
+    nav: { brandSub: 'ইট · ঠিকাদারি', about: 'পরিচয়', moments: 'মুহূর্ত', bricks: 'ইটভাটা', works: 'ঠিকাদারি', home: 'সোনামুড়া', contact: 'যোগাযোগ' },
     hero: {
       eyebrow: 'সোনামুড়া · ত্রিপুরা',
       name: 'অশোক রায়',

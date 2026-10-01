@@ -26,8 +26,18 @@ function Nav({ t, onToggle }) {
   return (
     <nav className={`nav ${scrolled ? 'scrolled' : ''}`} aria-label="Main">
       <a href="#top" className="logo" aria-label="Asok Roy — home">
-        <span className="monogram">AR</span>
-        <span className="logo-text">{t.hero.name}</span>
+        <svg className="logo-mark" viewBox="0 0 40 34" aria-hidden="true">
+          <rect x="11" y="2" width="18" height="9" rx="1.5" fill="#d9a066" />
+          <rect x="1.5" y="13" width="18" height="9" rx="1.5" fill="#b9583a" />
+          <rect x="20.5" y="13" width="18" height="9" rx="1.5" fill="#9c3d24" />
+          <rect x="11" y="24" width="18" height="9" rx="1.5" fill="#b9583a" />
+          <rect x="-8" y="24" width="18" height="9" rx="1.5" fill="#9c3d24" />
+          <rect x="30" y="24" width="18" height="9" rx="1.5" fill="#9c3d24" />
+        </svg>
+        <span className="logo-text">
+          <span className="logo-name">{t.hero.name}</span>
+          <span className="logo-sub">{t.nav.brandSub}</span>
+        </span>
       </a>
       <div className="nav-links">
         <a href="#about">{t.nav.about}</a>

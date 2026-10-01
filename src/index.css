@@ -144,23 +144,38 @@ h4 {
   text-decoration: none;
   margin-right: auto;
 }
-.monogram {
-  display: grid;
-  place-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  font-family: 'DM Serif Display', serif;
-  font-size: 18px;
-  color: var(--cream);
-  background:
-    linear-gradient(var(--brick-deep) 0 0) 0 33% / 100% 1.5px no-repeat,
-    linear-gradient(var(--brick-deep) 0 0) 0 66% / 100% 1.5px no-repeat,
-    var(--brick);
+.logo-mark {
+  flex: none;
+  width: 36px;
+  height: 31px;
+  overflow: hidden;
+  border-radius: 3px;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.35));
+  transition: transform 0.3s;
+}
+.logo:hover .logo-mark {
+  transform: translateY(-2px) rotate(-3deg);
 }
 .logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.logo-name {
   font-family: var(--serif);
   font-size: 20px;
+}
+.logo-sub {
+  margin-top: 3px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--clay);
+}
+.lang-bn .logo-sub {
+  letter-spacing: 0.04em;
+  font-size: 12px;
 }
 .nav-links {
   display: flex;
@@ -1292,7 +1307,7 @@ h4 {
   .process h3 {
     margin: 4px 0 2px;
   }
-  .logo-text {
+  .logo-sub {
     display: none;
   }
 }
