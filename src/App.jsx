@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
+import Intro from './components/Intro'
 import Kiln from './components/Kiln'
 import Moments from './components/Moments'
 import { copy, contact, credit } from './data'
@@ -253,6 +254,8 @@ function Contact({ t }) {
 export default function App() {
   const [lang, setLang] = useState(getInitialLang)
   const t = copy[lang]
+  const [introDone, setIntroDone] = useState(false)
+  const finishIntro = useCallback(() => setIntroDone(true), [])
 
   useEffect(() => {
     document.documentElement.lang = lang
@@ -266,7 +269,8 @@ export default function App() {
   useReveal([lang])
 
   return (
-    <div className={`lang-${lang}`}>
+    <div className={`lang-${lang} ${introDone ? '' : 'intro-playing'}`}>
+      {!introDone && <Intro t={t} onDone={finishIntro} />}
       <Nav t={t} onToggle={() => setLang((l) => (l === 'en' ? 'bn' : 'en'))} />
       <main>
         <Hero t={t} />
